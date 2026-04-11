@@ -1,0 +1,278 @@
+%\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{modeloIFTO}[2026/03/02 Modelo institucional para trabalhos acadêmicos]
+
+% ==================================================
+% PACOTES NECESSÁRIOS
+% ==================================================
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+\RequirePackage{setspace}
+
+% ==================================================
+% PADRONIZAÇÃO DE TERMOS EM ITÁLICO (CITAÇÕES)
+% ==================================================
+\newcommand{\IFetal}{\textit{et al.}}
+\newcommand{\IFapud}{\textit{apud}}
+\newcommand{\IFId}{\textit{Id.}}
+\newcommand{\IFIbid}{\textit{Ibid.}}
+\newcommand{\IFopcit}{\textit{op.\ cit.}}
+\newcommand{\IFpassim}{\textit{passim}}
+\newcommand{\IFloccit}{\textit{loc.\ cit.}}
+\newcommand{\IFcfcite}{\textit{Cf.}}
+\newcommand{\IFetseq}{\textit{et seq.}}
+\newcommand{\IFca}{\textit{ca.}}
+\newcommand{\IFsec}{\textit{séc.}}
+\newcommand{\IFsd}{\textit{s.d.}}
+
+% ==================================================
+%COMANDO PARA PARÁGRAFO SIMPLIFICADO
+% ==================================================
+
+\newcommand{\p}{\par}
+
+% ==================================================
+% TITULOS DE LISTAS EM MAIÚSCULO
+% ==================================================
+
+% Centralizar os títulos das listas
+\renewcommand{\cftloftitlefont}{\hfill\normalfont\normalsize\bfseries} % Lista de Figuras
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\normalfont\normalsize\bfseries} % Lista de Tabelas
+\renewcommand{\cftafterlottitle}{\hfill}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\normalsize\bfseries} % Sumário
+\renewcommand{\cftaftertoctitle}{\hfill}
+% Ajustar os nomes para Caixa Alta (se já não estiverem)
+\addto\captionsbrazil{
+  \renewcommand{\listfigurename}{LISTA DE FIGURAS}
+  \renewcommand{\listtablename}{LISTA DE TABELAS}
+  \renewcommand{\listquadroname}{LISTA DE QUADROS}
+  \renewcommand{\contentsname}{SUMÁRIO}
+}
+
+% ==================================================
+% COMANDO PADRÃO PARA ILUSTRAÇÕES (ABNT 14724)
+% Garante que título, imagem e fonte tenham a mesma largura
+% ==================================================
+% parâmetros: título, arquivo, fonte, legenda, nota
+% ps: para atributos vazios declare as {} e as deixe vazias
+
+
+\newcommand{\IFimagem}[6]{% 
+\begin{figure}[H] 
+    \centering 
+    \refstepcounter{figure}
+    
+    \begin{minipage}{12cm}
+    \captionsetup{justification=centering,singlelinecheck=false,font=small,labelfont=bf} 
+        
+        % Título automático (Figura + número)
+        \caption*{\figurename\ \thefigure\ -- #1}% 
+        
+        \label{fig:\thefigure}%
+        
+        % LoF automático
+        \addcontentsline{lof}{figure}{\figurename\ \thefigure\ -- \texorpdfstring{#1}{#1}}%
+    
+        % Imagem 
+        \centering 
+        \includegraphics[width=12cm]{#2}% 
+    
+        % Fonte, nota e legenda
+        \par\smallskip 
+        \parbox{12cm}{% 
+            \small\singlespacing\raggedright% 
+            Fonte: #3% 
+            \if\relax\detokenize{#5}\relax\else 
+                \\ Nota: #5% 
+            \fi
+            \if\relax\detokenize{#4}\relax\else 
+                \\ Legenda: #4% 
+            \fi
+        }%
+    \end{minipage} 
+\end{figure} 
+}
+
+% ==================================================
+% COMANDO PARA DEDICATÓRIA PADRONIZADA
+% ==================================================
+% parâmetros: texto da dedicatória
+
+\newcommand{\IFdedicatoria}[1]{%
+\clearpage                 % inicia nova página
+\thispagestyle{empty}      % sem cabeçalho ou número de página
+\vspace*{\fill}            % empurra o conteúdo para o final da página
+\begin{flushright}         % alinha à direita
+\begin{minipage}{0.4\textwidth} % largura da ABNT
+\singlespacing #1
+\end{minipage}
+\end{flushright}
+\clearpage                 % garante que o próximo conteúdo comece em nova página
+}
+
+
+% ==================================================
+% COMANDO PARA EPÍGRAFE PADRONIZADA
+% ==================================================
+% paramêtros: texto da epígrafe, referência
+
+\newcommand{\IFepigrafe}[2]{
+ 
+\clearpage % inicia nova página 
+\thispagestyle{empty} % sem cabeçalho ou número de página 
+\vspace*{\fill} % empurra o conteúdo para o final da página 
+\begin{flushright} % alinha à direita 
+\begin{minipage}{0.45\textwidth} % largura da ABNT 
+\raggedleft 
+\singlespacing 
+\textit{#1} % texto da epígrafe em itálico
+
+(#2) % autor da epígrafe 
+\end{minipage} 
+\end{flushright} 
+\clearpage % próxima página separada 
+}
+
+% ==================================================
+% COMANDO PARA RESUMO PADRONIZADA
+% ==================================================
+% parâmetros: texto, palavras-chave
+\newcommand{\IFresumo}[2]{
+\clearpage
+\thispagestyle{empty} % sem cabeçalho ou número de página
+
+\begin{center}
+\section*{RESUMO} % título do resumo sem numeração
+\end{center}      
+
+%\setlength{\parskip}{1em} % espaço entre parágrafos
+\singlespacing #1                       % texto do resumo
+
+\vspace{1em}
+\noindent\textbf{Palavras-chave:} #2
+\clearpage
+}
+
+% ==================================================
+% COMANDO PARA ABSTRACT PADRONIZADA
+% ==================================================
+% parâmetros: texto, palavras-chave
+\newcommand{\IFabstract}[2]{
+\clearpage
+\thispagestyle{empty} % sem cabeçalho ou número de página
+
+% Título centralizado
+\begin{center}
+\section*{ABSTRACT}
+\end{center}
+
+%\setlength{\parskip}{1em} % espaçamento entre parágrafos
+
+\singlespacing #1 % texto do abstract
+
+\vspace{1em}
+\noindent\textbf{Keywords:} #2
+\clearpage
+}
+
+% ==================================================
+% COMANDO PARA LISTA DE SIGLAS
+% ==================================================
+% parâmetros: lista de siglas
+\newcommand{\IFsiglas}[1]{
+\clearpage
+\thispagestyle{empty} % remove número de página
+\begin{center}
+\section*{LISTA DE SIGLAS} % título centralizado
+\end{center}
+\vspace{1em}
+\begin{tabular}{p{2.5cm} p{10cm}}
+#1
+\end{tabular}
+\clearpage
+}
+
+% ==================================================
+% COMANDO PARA LISTA DE APENDICE
+% ==================================================
+% paramêtros: título
+\newcounter{apendice}
+\newcounter{anexo}
+
+\newcommand{\IFapendice}[1]{
+    \clearpage
+    \stepcounter{apendice}
+
+    \begin{center}
+        \textbf{APÊNDICE \Alph{apendice} -- #1}
+    \end{center}
+
+    \addcontentsline{toc}{section}{\hspace*{3em}APÊNDICE \Alph{apendice} -- #1}
+}
+
+% ==================================================
+% COMANDO PARA LISTA DE ANEXOS
+% ==================================================
+% paramêtros: título
+\newcommand{\IFanexo}[1]{
+    \clearpage
+    \stepcounter{anexo}
+
+    \begin{center}
+        \textbf{ANEXO \Alph{anexo} -- #1}
+    \end{center}
+
+    \addcontentsline{toc}{section}{\hspace*{3em}ANEXO \Alph{anexo} -- #1}
+}
+
+
+% ==================================================
+% COMANDO PARA CITAÇÕES LONGAS
+% ==================================================
+% parâmetros: texto da citação
+\newcommand{\IFlongCit}[1]{
+\vspace{0.5\baselineskip}
+
+\begin{adjustwidth}{4cm}{0cm}
+\small
+\singlespacing
+#1
+\end{adjustwidth}
+
+\vspace{0.5\baselineskip}
+}
+
+
+% ==================================================
+% AMBIENTE PARA QUADROS
+% ==================================================
+
+\DeclareCaptionType{quadro}[Quadro][Lista de Quadros]
+\captionsetup[quadro]{labelsep=endash}
+\captionsetup[quadro]{listformat=simple}
+\DeclareCaptionListFormat{quadro}{Quadro #2 --}
+\captionsetup[quadro]{listformat=quadro}
+
+
+\makeatletter
+\newlength{\cftquadronumwidth}
+\setlength{\cftquadronumwidth}{3em}
+\renewcommand*\l@quadro{\@dottedtocline{1}{0em}{6em}}
+\makeatother
+
+
+% ==================================================
+% CONFIGURAÇÃO DA LISTA DE TABELAS
+% ==================================================
+
+\captionsetup[table]{labelsep=endash}
+\captionsetup[table]{listformat=simple}
+\DeclareCaptionListFormat{table}{Tabela #2 --}
+\captionsetup[table]{listformat=table}
+\makeatletter
+\renewcommand*\l@table{\@dottedtocline{1}{0em}{6em}}
+\makeatother
+
+% ==================================================
+% FIM DO PACOTE
+% ==================================================

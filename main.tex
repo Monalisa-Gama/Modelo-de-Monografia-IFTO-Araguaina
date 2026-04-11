@@ -1,0 +1,351 @@
+%tamanho fonte, tamanho pagina e tipo documento
+\documentclass[12pt,a4paper]{article}
+
+% configuração de pacotes
+\input{config.tex}
+% novos modelos de referência 
+\input{modelos-referencia.tex}
+
+
+
+\begin{document}
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+% Capa
+\include{capa}
+
+
+% Folha de rosto e Aprovação
+\include{folharosto}
+\include{folhaaprovacao}
+
+
+% Dedicatória
+\IFdedicatoria{ Dedico este trabalho à minha família, pelo apoio constante e incentivo durante toda a minha formação.}
+%\clearpage
+
+
+% Epígrafe
+\IFepigrafe{ A educação não transforma o mundo. A educação muda as pessoas. Pessoas transformam o mundo}{Paulo Freire}
+
+
+% resumo na língua vernácula (obrigatório)
+\IFresumo{ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat nulla augue, et bibendum libero rhoncus eget. Donec in elementum nisi, vel suscipit velit. Donec quis hendrerit ex. Proin cursus, tortor nec vehicula ultricies, justo tellus posuere risus, eu rhoncus nisi eros nec tellus. Aliquam condimentum gravida dignissim. Nam et pharetra justo. Aliquam nisi ante, molestie vel egestas nec, accumsan sollicitudin ipsum. Nam sit amet cursus ipsum, a posuere nunc. In eleifend et mauris nec convallis. Etiam suscipit sit amet erat ac lobortis. Maecenas cursus risus et massa accumsan, ut tempor leo mollis. Pellentesque commodo suscipit elit, eget lobortis dui feugiat vitae.}{igualdade de gênero, desenvolvimento social, liderança}
+
+
+% abstract em língua estrangeira (inglês)
+\IFabstract{ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat nulla augue, et bibendum libero rhoncus eget. Donec in elementum nisi, vel suscipit velit. Donec quis hendrerit ex. Proin cursus, tortor nec vehicula ultricies, justo tellus posuere risus, eu rhoncus nisi eros nec tellus. Aliquam condimentum gravida dignissim. Nam et pharetra justo. Aliquam nisi ante, molestie vel egestas nec, accumsan sollicitudin ipsum. Nam sit amet cursus ipsum, a posuere nunc. In eleifend et mauris nec convallis. Etiam suscipit sit amet erat ac lobortis. Maecenas cursus risus et massa accumsan, ut tempor leo mollis. Pellentesque commodo suscipit elit, eget lobortis dui feugiat vitae.}{gender equality, social development, leadership}
+
+%lista de figuras
+\clearpage
+\pdfbookmark[0]{LISTA DE FIGURAS}{lof}
+\listoffigures
+\thispagestyle{empty}
+\clearpage
+
+
+%lista de quadros
+\pdfbookmark[0]{LISTA DE QUADROS}{lot}
+\listofquadros
+\thispagestyle{empty}
+\clearpage
+
+
+% lista de tabelas
+\pdfbookmark[0]{LISTA DE TABELAS}{lot}
+\listoftables
+\thispagestyle{empty}
+\clearpage
+
+
+% Lista de siglas em ordem alfabética
+\IFsiglas{
+  ABNT & Associação Brasileira de Normas Técnicas \\
+  \textit{abnTeX} & \textit{ABsurd Norms for TeX} \\
+  IFTO & Instituto Federal do Tocantins \\
+  \textit{LPPL} & \textit{LaTeX Project Public License} \\
+  NBR & Norma Brasileira \\
+  \textit{PDF} & \textit{Portable Document Format} \\
+  \textit{WYSIWYG} & \textit{What You See Is What You Get} \\
+  \textit{WYSIWYM} & \textit{What You See Is What You Mean} \\
+}
+
+% Sumario
+ \clearpage
+\pdfbookmark[0]{Sumário}{toc} % bookmark no PDF
+\tableofcontents % gera o sumário sem número de capítulo
+\thispagestyle{empty} % remove número de página
+\clearpage
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+
+\clearpage % nova página para início de seções de primeiro nível
+\section{INTRODUÇÃO}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu convallis ligula, ac porttitor lorem. Mauris a eleifend urna, eu gravida enim. Vivamus tortor lacus, aliquam nec tristique a, volutpat varius ipsum. Nunc vulputate eros et auctor sagittis. Aenean finibus pretium urna in pharetra. Sed lacus risus, finibus malesuada dolor a, suscipit condimentum dolor. Suspendisse sed purus ac ligula laoreet finibus. Quisque mauris ex, porta nec feugiat et, pellentesque vel lacus. Sed dapibus mi id ullamcorper ultrices. Proin ut mi pellentesque lacus pharetra rutrum. Praesent dignissim at leo id pretium. Praesent ut consequat purus. Nam pretium rutrum augue. Nam sit amet pretium orci. \cite{abnt2024}. 
+
+Vestibulum non aliquam lacus. In quis dolor eu orci pulvinar pulvinar. Nullam eu ante egestas, pellentesque risus in, pretium sem. Nulla suscipit, tellus eu rutrum vehicula, purus sapien bibendum augue, id dictum odio dui quis felis. Nunc sagittis ipsum in congue sodales. Etiam sodales at dui nec rutrum. Praesent tempus convallis massa, id cursus neque. \cite{nbr10520_2023, nbr14724_2024, nbr6023_2025}.
+
+Vestibulum id dui massa. Pellentesque at nunc a felis viverra varius ut sed erat. Ut ullamcorper, elit ut elementum rhoncus, urna leo molestie nisi, condimentum tempus elit erat non justo. Praesent semper lorem non tellus aliquet, a sagittis ligula pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc justo libero, porttitor quis ante eu, laoreet semper diam. Aenean in quam metus. Phasellus sed vehicula odio, vel maximus lorem. Vivamus molestie, sapien quis lobortis feugiat, velit ex pharetra magna, non consectetur tortor nisl ut purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla in nisi sed massa scelerisque commodo. \cite{lamport1994, mittelbach2004}.
+
+Nam vitae congue lacus. Duis quis sapien pharetra, efficitur lectus eu, fermentum lectus. Ut vitae sapien mi. Vivamus est lorem, maximus at tincidunt id, consequat id velit. Quisque dui est, efficitur eget congue eu, posuere in nibh. In in ultrices sapien. Nulla ut neque sed ipsum finibus elementum. 
+
+Suspendisse rutrum rhoncus ornare. Proin finibus metus a rhoncus dignissim. Aliquam a sollicitudin massa. Aliquam leo augue, pharetra eu eros consequat, luctus pellentesque libero. Sed euismod libero a est commodo, eget pharetra felis luctus. Nunc lobortis, mi vitae maximus pharetra, mi odio rutrum velit, ut suscipit urna metus vel est. Morbi fermentum dignissim efficitur. Ut accumsan eros eu eros posuere fermentum.
+
+\clearpage % nova página para início de seções de primeiro nível
+\section{REFERENCIAL TEÓRICO}
+\label{referencial}
+
+\subsection{A Associação Brasileira da Normas Técnicas}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu convallis ligula, ac porttitor lorem. Mauris a eleifend urna, eu gravida enim. Vivamus tortor lacus, aliquam nec tristique a, volutpat varius ipsum. Nunc vulputate eros et auctor sagittis. Aenean finibus pretium urna in pharetra. Sed lacus risus, finibus malesuada dolor a, suscipit condimentum dolor. Suspendisse sed purus ac ligula laoreet finibus. Quisque mauris ex, porta nec feugiat et, pellentesque vel lacus. Sed dapibus mi id ullamcorper ultrices. Proin ut mi pellentesque lacus pharetra rutrum. Praesent dignissim at leo id pretium. Praesent ut consequat purus. Nam pretium rutrum augue. Nam sit amet pretium orci. \cite{abnt2024}. 
+
+Vestibulum id dui massa. Pellentesque at nunc a felis viverra varius ut sed erat. Ut ullamcorper, elit ut elementum rhoncus, urna leo molestie nisi, condimentum tempus elit erat non justo. Praesent semper lorem non tellus aliquet, a sagittis ligula pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc justo libero, porttitor quis ante eu, laoreet semper diam. Aenean in quam metus. Phasellus sed vehicula odio, vel maximus lorem.  \cite{ufsc2022abnt}. Vivamus molestie, sapien quis lobortis feugiat, velit ex pharetra magna, non consectetur tortor nisl ut purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla in nisi sed massa scelerisque commodo.
+
+\subsection{Normas de trabalhos acadêmicos e suas atualizações}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu convallis ligula, ac porttitor lorem. Mauris a eleifend urna, eu gravida enim. Vivamus tortor lacus  \textcite[p. 71]{sperandio2019}, aliquam nec tristique a, volutpat varius ipsum. Nunc vulputate eros et auctor sagittis. Aenean finibus pretium urna in pharetra. Sed lacus risus, finibus malesuada dolor a, suscipit condimentum dolor. Suspendisse sed purus ac ligula laoreet finibus. Quisque mauris ex, porta nec feugiat et, pellentesque vel lacus. Sed dapibus mi id ullamcorper ultrices. Proin ut mi pellentesque lacus pharetra rutrum. Praesent dignissim at leo id pretium. Praesent ut consequat purus. Nam pretium rutrum augue. Nam sit amet pretium orci.
+
+Vestibulum id dui massa. Pellentesque at nunc a felis viverra varius ut sed erat. Ut ullamcorper, elit ut elementum rhoncus, urna leo molestie nisi, condimentum tempus elit erat non justo. Praesent semper lorem non tellus aliquet, \textcite{nbr10520_2023} a sagittis ligula pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc justo libero, porttitor quis ante eu, laoreet semper diam. Aenean in quam metus. Phasellus sed vehicula odio, vel maximus lorem. Vivamus molestie, sapien quis lobortis feugiat, velit ex pharetra magna, non consectetur tortor nisl ut purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla in nisi sed massa scelerisque commodo  \cite{nbr10520_2023}.
+
+Nam vitae congue lacus. Duis quis sapien pharetra, efficitur lectus eu, fermentum lectus. Ut vitae sapien mi. Vivamus est lorem, maximus at tincidunt id, consequat id velit. Quisque dui est, efficitur eget congue eu, posuere in nibh. In in ultrices sapien. Nulla ut neque sed ipsum finibus elementum.
+
+Suspendisse rutrum rhoncus ornare. Proin finibus metus a rhoncus dignissim. Aliquam a sollicitudin massa. Aliquam leo augue, pharetra eu eros consequat, luctus pellentesque libero. Sed euismod libero a est commodo, eget pharetra felis luctus  \cite{nbr14724_2024}.  Nunc lobortis, mi vitae maximus pharetra, mi odio rutrum velit, ut suscipit urna metus vel est. Morbi fermentum dignissim efficitur. Ut accumsan eros eu eros posuere fermentum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu convallis ligula, ac porttitor lorem. Mauris a eleifend urna, eu gravida enim. Vivamus tortor lacus, aliquam nec tristique a, volutpat varius ipsum. Nunc vulputate eros et auctor sagittis. Aenean finibus pretium urna in pharetra. Sed lacus risus, finibus malesuada dolor a, suscipit condimentum dolor. Suspendisse sed purus ac ligula laoreet finibus. Quisque mauris ex, porta nec feugiat et, pellentesque vel lacus. Sed dapibus mi id ullamcorper ultrices. Proin ut mi pellentesque lacus pharetra rutrum. Praesent dignissim at leo id pretium. Praesent ut consequat purus. Nam pretium rutrum augue. Nam sit amet pretium orci \cite{nbr6023_2025}.
+
+\IFimagem{Exemplo de referência de entrevista em documento sonoro digital}{imagens/exemplo-nbr6023}{produção própia}{}{observa-se que a identificação do entrevistado passou a ser grafada no início da referência, como autor do documento, bem como a omissão do termo latino \textit{sine loco}, mesmo na ausência de informação sobre a localização.
+}
+
+\subsection{Editores de texto e as barreiras da produção manual}
+
+Suspendisse vestibulum leo at augue iaculis, eget gravida enim volutpat. Quisque lacus lectus, aliquam eu nisi a, euismod dapibus sem. Nunc semper ante ac fringilla commodo \cite{meyrowitz1982}. Maecenas in magna sit amet enim pretium bibendum. Donec sed pulvinar odio. Morbi convallis luctus facilisis. Vestibulum quis est mollis, euismod nulla quis, consequat purus. Nunc vitae ligula ac elit accumsan iaculis vitae id odio. Integer sodales finibus lacus, sed aliquet nisi vestibulum facilisis. Vestibulum erat nunc, congue et quam non, sagittis aliquam tortor. Nam tempor pharetra sem. Ut ornare felis vitae augue eleifend posuere et id dolor. Sed mollis semper risus, in accumsan eros auctor sed.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas ex elit, semper quis massa in, dictum lobortis dui. Ut at ante fringilla risus porttitor tempor. Ut sit amet orci eu dui scelerisque iaculis aliquet quis nisi. Pellentesque tempus mattis lacus id rutrum. Nam ut velit vitae quam consequat venenatis non faucibus neque. Nullam imperdiet, sapien in mollis accumsan, neque tortor finibus lacus, eu interdum lacus dolor in mi. Cras pharetra turpis eu euismod facilisis. In pretium, augue sit amet iaculis accumsan, neque urna malesuada risus, ut aliquam lacus lacus ut magna. Maecenas sit amet consectetur mauris. Nulla mattis magna felis, non varius metus eleifend et. Morbi porta mi lorem, et egestas quam mollis vitae. Pellentesque accumsan mi dictum turpis laoreet finibus. Nulla mollis lectus est, in laoreet felis iaculis luctus.
+
+\IFlongCit{O design visual é adequado para documentos curtos e simples, como cartas e memorandos. Mas não é apropriado para documentos mais complexos, como artigos científicos \cite[p. 7, tradução própria]{lamport1994}.
+}
+
+Nunc tincidunt, nisi at porta imperdiet, tortor nunc pharetra nibh, eget rutrum sem quam ut lorem. Phasellus dolor quam, varius sit amet odio et, sodales pharetra dolor. Integer diam elit, pharetra in posuere vel, auctor et nulla. Nam ullamcorper dolor ut leo lobortis, sit amet pharetra tortor laoreet. Quisque sit amet gravida mauris. Donec tempor quam id ultricies accumsan. Proin in tincidunt enim, eget gravida nisi. Donec vehicula ornare nulla. Proin a maximus velit, nec efficitur lectus. In fringilla venenatis orci, et semper risus hendrerit vitae. \cite{lamport1994}.
+
+
+
+\clearpage % nova página para início de seções de primeiro nível
+\section{METODOLOGIA}
+\label{metodologia}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tortor vel ante dapibus mollis. Curabitur at mollis neque. Morbi tincidunt, magna id ultrices malesuada, libero mi mattis eros, at sodales nulla leo non tellus. Suspendisse vitae congue augue. Praesent sem quam, vestibulum rutrum metus non, molestie rutrum sapien. Vivamus in consequat nibh, nec convallis turpis. Praesent arcu nibh, tempus tristique fermentum maximus, congue id velit. Donec nec maximus quam, et semper urna. Praesent eget suscipit augue.
+
+\subsection{Levantamento e análise das normas}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt tortor vel ante dapibus mollis. Curabitur at mollis neque. Morbi tincidunt, magna id ultrices malesuada, libero mi mattis eros, at sodales nulla leo non tellus. Suspendisse vitae congue augue. Praesent sem quam, vestibulum rutrum metus non, molestie rutrum sapien. Vivamus in consequat nibh, nec convallis turpis. Praesent arcu nibh, tempus tristique fermentum maximus, congue id velit. Donec nec maximus quam, et semper urna. Praesent eget suscipit augue.
+
+Nullam egestas maximus sapien, a dignissim justo tincidunt tincidunt. Ut ut aliquet urna. Cras tincidunt arcu in iaculis scelerisque. Donec sit amet eros eu urna imperdiet fringilla non non felis. Maecenas quis commodo turpis. Donec porta ullamcorper sodales. Sed egestas elementum lacinia. Nunc sodales magna risus, eu lobortis tortor dapibus fermentum. Aliquam et felis sem. Sed efficitur rutrum elementum. Nulla congue nibh et interdum vestibulum. Duis vehicula nisi sit amet purus feugiat accumsan.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas ex elit, semper quis massa in, dictum lobortis dui. Ut at ante fringilla risus porttitor tempor. Ut sit amet orci eu dui scelerisque iaculis aliquet quis nisi. Pellentesque tempus mattis lacus id rutrum. Nam ut velit vitae quam consequat venenatis non faucibus neque. Nullam imperdiet, sapien in mollis accumsan, neque tortor finibus lacus, eu interdum lacus dolor in mi. Cras pharetra turpis eu euismod facilisis. In pretium, augue sit amet iaculis accumsan, neque urna malesuada risus, ut aliquam lacus lacus ut magna. Maecenas sit amet consectetur mauris. Nulla mattis magna felis, non varius metus eleifend et. Morbi porta mi lorem, et egestas quam mollis vitae. Pellentesque accumsan mi dictum turpis laoreet finibus. Nulla mollis lectus est, in laoreet felis iaculis luctus.
+
+Suspendisse vestibulum leo at augue iaculis, eget gravida enim volutpat. Quisque lacus lectus, aliquam eu nisi a, euismod dapibus sem. Nunc semper ante ac fringilla commodo. Maecenas in magna sit amet enim pretium bibendum. Donec sed pulvinar odio. Morbi convallis luctus facilisis. Vestibulum quis est mollis, euismod nulla quis, consequat purus. Nunc vitae ligula ac elit accumsan iaculis vitae id odio. Integer sodales finibus lacus, sed aliquet nisi vestibulum facilisis. Vestibulum erat nunc, congue et quam non, sagittis aliquam tortor. Nam tempor pharetra sem. Ut ornare felis vitae augue eleifend posuere et id dolor. Sed mollis semper risus, in accumsan eros auctor sed.
+
+\subsection{Análise do modelo institucional}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, desenvolvido por \textcite{barbosa2017}, para o \textit{Campus} Palmas. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nesse sentido, destaca-se o direcionamento do projeto ao afirmar que BibLaTeX tem como objetivo substituir a necessidade dos arquivos \verb|.bst| do BibLaTeX e utilizar exclusivamente o BibLaTeX para essas configurações \cite{abntex26}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\subsubsection{Adoção do BibLaTeX}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, conforme a apresentado na Figura 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit \verb|<|\verb|>|. Lorem ipsum dolor sit amet, consectetur adipiscing elit, conforme a NBR 6023 vigente. \ref{fig:2}
+
+\IFimagem{Exemplo de referência \textit{online} no modelo do \textit{Campus} Palmas}{imagens/exemplo-bibliografia-online-modelo-base.png}{Produção própria}{}{}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Tal vantagem pode ser observada na Figura 10, na qual a mesma referência é compilada após modificações simples em um arquivo específico destinado apenas às citações da classe \verb|@online|, conforme ilustrado no código apresentado na Figura 11.
+
+\IFimagem{Exemplo de referência \textit{online} utilizando o BibLaTeX}{imagens/exemplo-bibliografia-online-modelo-novo.png}{Produção própria}{}{}
+
+\IFimagem{Exemplo de código BibLaTeX para referência \textit{online}}{imagens/exemplo-codigo-bibliografia-online-novo.png}{Produção própria}{}{destaca-se que o código apresentado tem como único objetivo adequar a apresentação dos campos \textit{Localização} e \textit{Organização}, sendo as demais modificações decorrentes simplesmente da migração para o BibLaTeX.}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Adicionalmente, sua integração com o \textit{backend}\footnote{Toda a parte lógica não diretamente visível ao usuário em sistemas e programas, operações realizadas pelo servidor.} Biber possibilita melhor suporte a caracteres Unicode, ordenação avançada de referências, maior flexibilidade na personalização de estilos e ampla compatibilidade com diferentes formatos de fontes bibliográficas \cite{biblatex_biber}. Lorem ipsum dolor sit amet.
+
+\subsubsection{Escolha do compilador}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{overleaf_tex_family_tree}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{overleaf_tex_family_tree, luatexteam}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+\subsection{Estruturação e customização do modelo}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, baseada na utilização de apenas três arquivos principais: \verb|config.tex|, \verb|modeloIFTO.sty| e \verb|modelos-referencia.tex|. Lorem ipsum dolor sit amet, consectetur adipiscing elit, como \verb|.cls|, \verb|.sty| e \verb|.bst|.O arquivo \verb|config.tex| lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Já o arquivo \verb|modeloIFTO.sty| lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Por sua vez, o arquivo \verb|modelos-referencia.tex| lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\subsection{Licenciamento e distribuição}
+
+\p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \cite{lppl2008}.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet.
+
+\clearpage 
+\section{RESULTADOS}
+\label{resultados}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Como ilustrado na Figura 12, o arquivo \verb|main.tex| lorem ipsum dolor sit amet, integrando o arquivo \verb|config.tex| que possui as definições de estilo, bibliografia de \verb|references.bib| e a importação de \verb|modeloIFTO.sty| contendo personalização de diversas estruturas, como resumo, figuras e epígrafes. O arquivo \verb|main.tex| também importa os \textit{drivers} customizados no arquivo \verb|modelos-referencia.tex|.
+
+\IFimagem{Arquivos do projeto}{imagens/arquivos-projeto.pdf}{Produção própria}{}{}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. O aluno preenche apenas os campos nos arquivos de \verb|capa.tex| e \verb|folharosto.tex|, além de alimentar a bibliografia \verb|references.bib|. Todas as funções no arquivo \verb|modeloIFTO.sty| utilizam o prefixo "IF" (ex: \verb|\IFresumo|, \verb|\IFanexo|). 
+
+\subsection{Arquitetura estrutural em conformidade com a NBR 14724}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. O Quadro \ref{tab:diretrizes_estrutura} apresenta um compilado dos itens atualizados, destacando-se as regras de identificação para Apêndices e Anexos.
+
+%NBR 14724
+\begin{quadro}[H]
+    \centering
+    \caption{Resumo das atualizações da NBR 14724 de 2024}
+    \label{tab:diretrizes_estrutura}
+    \small
+    \begin{tabular}{@{} l l p{5cm} p{5cm} @{}}  % 'p' define largura fixa para quebrar texto 
+        \toprule
+        \textbf{Item} & \textbf{Regra} & \textbf{Descrição} & \textbf{Exemplo} 
+        \\ \midrule
+        4.2.2 & Elementos textuais & Organização em seções, não em capítulos. & \textemdash
+        \\ \midrule
+        4.2.3.1 & Referências & Referências de Anexo podem constar em nota de rodapé ou lista específica. & \textemdash
+        \\ \midrule
+        4.2.3.3 & Apêndice & Uso de letras maiúsculas dobradas ao esgotar o alfabeto. Destaque igual à seção primária. & APÊNDICE AA — AVALIAÇÃO NUMÉRICA DE CÉLULAS INFLAMATÓRIAS 
+        \\ \midrule
+        4.2.3.4 & Anexo & Uso de letras maiúsculas dobradas ao esgotar o alfabeto. Destaque igual à seção primária. & ANEXO BB; ANEXO CC;
+        \\ \midrule
+        5.2.4 & Elementos sem título & Dedicatória e epígrafe: do meio da mancha gráfica até a margem direita (parte inferior). & \textemdash
+        \\ \midrule
+        5.8 & Ilustrações & Identificação, título e fonte devem acompanhar as margens da ilustração. & \textemdash
+        \\ \bottomrule
+    \end{tabular}
+    \vspace{4pt}
+    \begin{flushleft}
+        \footnotesize Fonte: Elaborado pelo autor (2026).
+    \end{flushleft}
+\end{quadro}
+
+\subsection{Adequação normativa e automação de citações conforme NBR 10520}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Este levantamento, sintetizado na Quadro \ref{tab:normas_abnt}, funcionou como o conjunto de regras. A partir dessas diretrizes e com a migração para BibLaTeX, os comandos \verb|\cite| e \verb|\textcite| garantem que a saída respeite a nova padronização.
+
+% NBR 10520
+\begin{quadro}[H]
+    \centering
+    \small
+    \caption{Resumo das atualizações da NBR 10520 de 2023}
+    \label{tab:normas_abnt}
+    \begin{tabular}{@{} l p{3cm} p{5cm} p{5cm} @{}} % 'p' define largura fixa para quebrar texto   
+        \toprule
+        \textbf{Item} & \textbf{Regra} & \textbf{Descrição} & \textbf{Exemplo} 
+        \\ \midrule
+        5.2 & Pontuação & O ponto final deve ser usado para encerrar a frase e não a citação. & “A autenticidade...” (Santos, 2022, p. 78). 
+        \\ \midrule
+        6.1 & Sistema \break{} Autor-data & Nomes de pessoas e instituições em maiúsculas e minúsculas em qualquer citação. & (Souza, 2015) \break{} (IBGE, 2011, p. 3) \break{} (Organização Mundial da Saúde, 2010).
+        \\ \midrule
+        6.1.2 & Uso do \textit{et al.} & Opcional mencionar todos os autores, mesmo com quatro ou mais. & Maciel, Brum, Del Bianco e Costa (2019, p. 163). 
+        \\ \midrule
+        7.1 & Citações Diretas & Indicação de página essencial, mas facultativa na ausência da informação. & \textemdash
+        \\ \midrule
+        7.1.1 & Citações diretas com mais de três linhas & Valor de 4cm não é mais obrigatório; o autor define e padroniza o recuo. & Recuo livre, desde que padronizado em todas as citações longas. 
+        \\ \midrule
+        8.1.2.2 & 
+quadro        Expressões \break{} Latinas & Expressões e abreviaturas devem ser grafadas em itálico. & \textit{et al., apud, ibid, op. cit., ca.} 
+        \\ \bottomrule
+    \end{tabular}
+    \vspace{4pt}
+    \begin{flushleft}
+        \footnotesize Fonte: Elaborado pelo autor (2026).
+    \end{flushleft}
+\end{quadro}
+
+\IFimagem{Citação modelo Palmas}{imagens/citacao-palmas.png}{Produção própria}{}{}
+
+\IFimagem{Citação modelo Araguaína}{imagens/citacao-araguaina.png}{Produção própria}{}{}
+
+\subsection{Mapeamento de referências e implementação da NBR 6023}
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Foi desenvolvido um mapeamento de requisitos (Quadro \ref{tab:atualizacoes_nbr6023}) confrontando as versões da norma. O principal ganho técnico consistiu na reestruturação do \textit{driver} \verb|@online| e campos como \verb|organization|. 
+
+\begin{table}[H]
+    \centering
+    \caption{Distribuição Estatística das Atualizações da NBR 6023}
+    \label{tab:atualizacoes_nbr6023}
+    \small
+    \begin{tabular}{@{} p{2cm} p{4cm} p{3cm} p{3cm} @{}}
+        \toprule
+        \textbf{Item} & \textbf{Regra} & \textbf{Quantidade} & \textbf{Percentual (\%)} 
+        \\ \midrule
+        7.7.1   & ISSN e Periódicos & 12 & 24\% \\ \midrule
+        7.13.5  & Recursos Sonoros   & 18 & 36\% \\ \midrule
+        8.6.1.3 & Cronologia e Datas & 10 & 20\% \\ \midrule
+        Outros  & Ajustes Gerais     & 10 & 20\% \\ \midrule
+        \textbf{Total} & \textbf{---} & \textbf{50} & \textbf{100\%} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\IFimagem{Driver de \textit{podcast}}{imagens/driver-podcast.png}{Produção própria}{Descrição do código e resultado compilado.}{}
+
+\subsection{Validação e Limitações}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Os testes demonstraram estabilidade no uso do motor \textit{Biber}. O modelo desenvolvido assegura que o pesquisador foque no conteúdo. 
+
+Devido à customização, o tempo de compilação pode ser superior no Overleaf. Outra alternativa é utilizar softwares locais, como o TeXmaker, com os devidos pacotes instalados.
+
+
+\clearpage
+\section{Considerações Finais}
+\label{conclusao}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dolor eget ullamcorper laoreet. Proin et luctus enim. Sed ultricies purus eget magna posuere laoreet. Curabitur fringilla massa in augue molestie molestie. Sed rhoncus facilisis vehicula. Donec sed arcu cursus, feugiat nisi eu, posuere nulla. Proin et porttitor lectus, ac ultrices dui. Ut elit arcu, tincidunt vel lacus non, placerat laoreet mauris. Integer tempus lectus quis lorem ultricies mollis.
+
+Sed lectus augue, interdum vel tempor sed, porta a lectus. Etiam eu auctor elit. Donec ullamcorper accumsan ligula, ac rhoncus metus faucibus in. In dignissim erat a ipsum malesuada eleifend. Suspendisse vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis eget neque a tortor imperdiet fringilla. Aliquam vehicula lacinia porttitor. Mauris leo libero, mollis quis iaculis eget, porttitor at libero.
+
+Integer placerat aliquet est, ultricies pretium urna porta non. Donec consequat nec risus at aliquam. In hac habitasse platea dictumst. Sed lacinia arcu eu purus varius suscipit. Suspendisse mollis dignissim lacus. Vestibulum ipsum urna, dictum a malesuada vitae, sagittis scelerisque nisi. Vivamus pulvinar mattis odio, at laoreet sem luctus eu. Morbi aliquet dignissim enim et hendrerit.
+
+Donec consequat tellus et nisi ultricies, at luctus ex dapibus. Duis eleifend leo nec tortor euismod laoreet. Cras tempor ornare sem sed blandit. Nullam metus mauris, sodales a risus in, porta blandit nulla. Mauris id ex nisi. Nullam id leo id diam condimentum egestas. Vestibulum non urna et ligula suscipit commodo sed lacinia ligula. In hac habitasse platea dictumst. Vivamus luctus, augue elementum dignissim placerat, lacus diam congue metus, quis fermentum metus urna ut risus. Ut at ornare nulla, sit amet vulputate turpis. Etiam eget tristique nulla, sit amet aliquam quam. Sed non purus molestie, semper lacus sit amet, condimentum ex. Sed ac sapien eu dolor condimentum egestas at gravida dui. Nulla iaculis vitae tellus eget varius.
+
+Quisque turpis ex, ullamcorper quis vehicula a, semper ac est. Integer in lobortis sem, non malesuada nulla. Phasellus porttitor tortor quis lacus ullamcorper ultricies. Mauris in diam felis. Curabitur condimentum vulputate metus at rutrum. Duis ultricies, ipsum id ornare sagittis, metus enim ullamcorper magna, at bibendum libero justo non sem. Sed bibendum, nibh a sollicitudin molestie, ante velit eleifend massa, vitae condimentum felis mi in nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et quam malesuada, rhoncus nibh sit amet, porta nisl. Sed vestibulum nisi et ultricies lacinia. Ut eget enim tortor. Etiam tempor sed arcu vel pretium. Etiam sit amet bibendum enim, et dignissim risus. Etiam semper iaculis malesuada.
+
+
+% ==================================================
+% ELEMENTOS PÓS-TEXTUAIS
+% ==================================================
+\clearpage
+\printbibliography[title={\centering REFERÊNCIAS}] % gera as referências com título centralizado
+\addcontentsline{toc}{section}{\hspace*{3em}REFERÊNCIAS} % adiciona ao sumário
+
+%APENDICES
+\setcounter{apendice}{0} %contador de apêndices
+
+\IFapendice{Questionário desenvolvido} %adicionar um para cada apêndice
+Conteúdo...
+
+\IFapendice{Algoritmo desenvolvido}
+Conteúdo...
+
+
+%ANEXOS
+\setcounter{anexo}{0} %contador de anexos
+
+\IFanexo{Questionário aplicado} %adicionar um para cada anexo
+Conteúdo...
+
+\IFanexo{Código fonte}
+Conteúdo...
+
+
+\end{document}

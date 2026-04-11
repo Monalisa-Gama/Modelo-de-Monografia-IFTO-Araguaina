@@ -1,0 +1,134 @@
+%pacotes
+%\usepackage[utf8]{inputenc} % desnecessário no XeLaTeX/LuaLaTeX
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{csquotes}
+\usepackage[toc]{appendix}
+\usepackage{booktabs} %tabelas
+\usepackage{indentfirst} %recuo do paragrafo
+\RequirePackage{xparse}
+
+
+%configuração da página
+\usepackage{geometry}
+\geometry{
+    top=2cm,      % distância do topo da página até o início do cabeçalho
+    bottom=3cm,
+    left=3cm,
+    right=2cm,
+    headheight=15pt, % altura do cabeçalho (necessário para fancyhdr)
+    includehead       % inclui o cabeçalho no cálculo da margem superior
+}
+
+%recuo de paragros e espaço entre eles
+\usepackage{indentfirst} % indenta primeiro parágrafo após seção
+\setlength{\parindent}{1.25cm} % recuo padrão ABNT
+\setlength{\parskip}{0pt} % remove espaço extra entre parágrafos
+
+%Espaçamento entre linhas
+\usepackage{setspace}
+\onehalfspacing  % 1,5 entre linhas
+
+%configuração da paginação
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % limpa cabeçalho e rodapé
+\fancyhead[R]{\thepage}% número da página no topo direito
+\renewcommand{\headrulewidth}{0pt} % sem linha
+\fancyfoot{} % rodapé vazio
+
+%funcionamento de listas e sumario
+\usepackage{tocloft} 
+
+\usepackage[hidelinks]{hyperref} % precisa vir por último
+
+
+\setlength{\cftbeforesecskip}{0pt}  % espaço antes de cada seção
+\setlength{\cftsecindent}{0pt}      % remove indentação da seção
+\setlength{\cftsubsecindent}{0pt}   % remove indentação da subseção
+\setlength{\cftsubsubsecindent}{0pt}% remove indentação da subsubseção
+
+% seções de nível dois (1.1, 1.2) em negrito conforme definição nas seções
+\renewcommand{\cftsubsecfont}{\bfseries}
+\renewcommand{\cftsubsecpagefont}{\bfseries}
+
+% pontinhos nas listas e no sumário
+\renewcommand{\cftdotsep}{2} % espaço entre os pontos
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% largura reservada para o número no sumário e nas listas
+\setlength{\cftsecnumwidth}{3em}      % seções 1, 2, etc.
+\setlength{\cftsubsecnumwidth}{3em}   % subseções 1.1, 1.2, etc.
+\setlength{\cftsubsubsecnumwidth}{3em}% subsubseções 1.1.1, 1.1.2
+\setlength{\cftparanumwidth}{3em} % seções 1.1.1.1
+
+% configuração dos links do arquivo
+\hypersetup{
+    colorlinks=true,    % links aparecem coloridos
+    linkcolor=black,    % links internos (capítulos, figuras) 
+    citecolor=black,    % citações
+    urlcolor=black       % links externos (URL)
+}
+\urlstyle{same}  % usa mesma fonte do texto normal para URLs
+
+% Remove indentação dos níveis do sumário
+\setlength{\cftbeforesecskip}{0pt}  % espaço antes de cada seção
+\setlength{\cftsecindent}{0pt}      % remove indentação da seção
+\setlength{\cftsubsecindent}{0pt}   % remove indentação da subseção
+\setlength{\cftsubsubsecindent}{0pt}% remove indentação da subsubseção
+
+% pacotes para figuras
+\usepackage{float} %uso do H 
+\usepackage{caption}  % para \captionsetup
+\usepackage{setspace} % para espaçamento (\singlespacing, \onehalfspacing, etc.)
+
+% Pacote IFTO
+\usepackage{modeloIFTO}
+
+%fonte
+\usepackage{fontspec}  % Pacote para fontes do sistema
+\setmainfont{Arial}    % Define Arial como fonte principal
+
+%biblatex
+\usepackage[
+backend=biber,
+style=abnt
+]{biblatex}
+
+% ajuste em tabelas
+\captionsetup[table]{labelsep=endash} % Substitui : por travessão nas tabelas
+
+% configuração dos títulos de seção
+\makeatletter
+% 1 SEÇÃO PRIMÁRIA: Negrito + Caixa Alta + Tamanho Normal (12)
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+    {-3.5ex \@plus -1ex \@minus -.2ex}%
+    {2.3ex \@plus.2ex}%
+    {\normalfont\normalsize\bfseries\MakeUppercase}}
+% 1.1 SEÇÃO SECUNDÁRIA: Negrito + Caixa baixa + Tamanho Normal (12)
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+    {-3.25ex\@plus -1ex \@minus -.2ex}%
+    {1.5ex \@plus .2ex}%
+    {\normalfont\bfseries\normalsize}}
+% 1.1.1 Seção Terciária: Sem Negrito + Caixa Baixa + Tamanho Normal (12)
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+    {-3.25ex\@plus -1ex \@minus -.2ex}%
+    {1.5ex \@plus .2ex}%
+    {\normalfont\normalsize}}
+\makeatother
+
+%bibliografias
+\addbibresource{references.bib}
+
+%notas de rodapé
+\makeatletter
+\renewcommand\@makefntext[1]{% redefine a indentação das linhas seguintes
+  \noindent
+  \hangindent=0.5em
+  \linespread{1}\selectfont
+  \textsuperscript{\@thefnmark}\hspace{0em}#1%
+}
+\makeatother

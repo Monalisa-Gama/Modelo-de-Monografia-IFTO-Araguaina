@@ -1,0 +1,52 @@
+% folha de aprovacao.tex
+\newlength{\assinaturalargura}
+\setlength{\assinaturalargura}{0.6\textwidth} % largura da assinatura
+
+% comando para assinatura
+\newcommand{\assinatura}[1]{%
+    \begin{center}
+        \vspace{1.5cm} % espaço para assinatura
+        \rule{\assinaturalargura}{0.4pt}\\ % linha da assinatura
+        {\small #1}
+    \end{center}
+}
+
+% ambiente folhadeaprovacao
+\newenvironment{folhadeaprovacao}{%
+    \clearpage
+    \thispagestyle{empty} % sem cabeçalho
+}{%
+    \clearpage
+}
+
+% --- Conteúdo da folha ---
+\begin{folhadeaprovacao}
+
+\begin{center}
+
+    {\normalsize\textbf{NOME COMPLETO DO DISCENTE}\\}
+    \vspace{1cm}
+    {\normalsize\bfseries{PROPOSTA DE MODELO PARA MONOGRAFIAS: Normalização com LaTeX\\}}
+    \vspace{1cm}
+    
+    \hspace{.45\linewidth}
+    \begin{minipage}{.50\linewidth}
+       \singlespacing Trabalho de Conclusão de Curso apresentado à Coordenação do Curso Superior de XXXX do Instituto Federal de Educação, Ciência e Tecnologia do Tocantins, como requisito parcial para obtenção do título de XXXX.
+    \end{minipage}
+
+\end{center}
+
+\vspace{0.75cm}
+{\normalsize{Aprovado em: \_\_/\_\_/\_\_}}
+
+\vspace{0.75cm}
+\begin{center}
+    \textbf{BANCA AVALIADORA}
+\end{center}
+
+% assinaturas uma abaixo da outra
+\assinatura{Dr. Nome completo do orientador \\ Orientador \\IFTO - \textit{Campus} Araguaína}
+\assinatura{Me. Nome completo do membro da banca\\IFTO - \textit{Campus} Araguaína}
+\assinatura{Esp. Nome completo do membro da banca \\IFTO - \textit{Campus} Araguaína}
+
+\end{folhadeaprovacao}

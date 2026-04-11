@@ -1,0 +1,41 @@
+% podcast
+\DeclareBibliographyDriver{podcast}{%
+  \printnames{author}%
+  \adddot\space
+  \printfield{title}%
+  \adddot\space
+  Entrevistadores: \printnames{editor}%
+  \adddot\space
+  \printlist{organization}%
+  \adddot\space
+  \printdate%
+  \adddot\space
+  \printfield{note}%
+  \newunit\newblock
+  \usebibmacro{url+urldate}%
+  \adddot
+  \finentry
+}
+
+%DRIVER PARA SITE (@online) - Forçando o Local
+\DeclareBibliographyDriver{online}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \setunit{\printdelim{nametitledelim}}\newblock
+  \usebibmacro{title}%
+  \setunit{\addperiod\space}%
+  % Força o local seguido da organização
+  \printlist{location}%
+  \iflistundef{location}{}{\setunit{\addcolon\space}}%
+  \printlist{organization}%
+  \setunit{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit\newblock
+  \usebibmacro{url+urldate}%
+  \usebibmacro{finentry}}
+
+
+
+
+
