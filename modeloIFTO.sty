@@ -104,7 +104,9 @@
 \vspace*{\fill}            % empurra o conteúdo para o final da página
 \begin{flushright}         % alinha à direita
 \begin{minipage}{0.4\textwidth} % largura da ABNT
-\singlespacing #1
+\begin{spacing}{1}
+#1
+\end{spacing}
 \end{minipage}
 \end{flushright}
 \clearpage                 % garante que o próximo conteúdo comece em nova página
@@ -124,10 +126,12 @@
 \begin{flushright} % alinha à direita 
 \begin{minipage}{0.45\textwidth} % largura da ABNT 
 \raggedleft 
+{
 \singlespacing 
 \textit{#1} % texto da epígrafe em itálico
 
 (#2) % autor da epígrafe 
+}
 \end{minipage} 
 \end{flushright} 
 \clearpage % próxima página separada 
@@ -146,11 +150,13 @@
 \end{center}      
 
 %\setlength{\parskip}{1em} % espaço entre parágrafos
+{
 \singlespacing%
 \noindent #1                       % texto do resumo
 
 \vspace{1em}
 \noindent\textbf{Palavras-chave:} #2
+}
 \clearpage
 }
 
@@ -168,12 +174,13 @@
 \end{center}
 
 %\setlength{\parskip}{1em} % espaçamento entre parágrafos
-
+{
 \singlespacing%
 \noindent #1 % texto do abstract
 
 \vspace{1em}
 \noindent\textbf{Keywords:} #2
+}
 \clearpage
 }
 
@@ -237,8 +244,10 @@
 
 \begin{adjustwidth}{4cm}{0cm}
 \small
+{
 \singlespacing
 #1
+}
 \end{adjustwidth}
 
 \vspace{0.5\baselineskip}
@@ -259,7 +268,7 @@
 \makeatletter
 \newlength{\cftquadronumwidth}
 \setlength{\cftquadronumwidth}{3em}
-\renewcommand*\l@quadro{\@dottedtocline{1}{0em}{6em}}
+\renewcommand*\l@quadro{\@dottedtocline{1}{0em}{5.5em}}
 \makeatother
 
 
