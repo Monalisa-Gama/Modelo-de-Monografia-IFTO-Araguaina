@@ -112,6 +112,24 @@
 \clearpage                 % garante que o próximo conteúdo comece em nova página
 }
 
+% ==================================================
+% COMANDO PARA AGRADECIMENTOS PADRONIZADA
+% ==================================================
+% parâmetros: texto, palavras-chave
+\newcommand{\IFagradece}[2]{
+\clearpage
+\thispagestyle{empty} % sem cabeçalho ou número de página
+
+\begin{center}
+\section*{AGRADECIMENTOS} % título do agradecimento sem numeração
+\end{center}      
+
+{
+\singlespacing #1                       % texto do agradecimento
+}
+
+\clearpage
+}
 
 % ==================================================
 % COMANDO PARA EPÍGRAFE PADRONIZADA
